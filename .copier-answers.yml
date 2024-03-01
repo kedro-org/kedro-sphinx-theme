@@ -1,0 +1,9 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v2024.02.1
+_src_path: gh:astrojuanlu/copier-pylib
+author_email: juan_luis_cano@mckinsey.com
+author_name: Juan Luis Cano Rodríguez
+github_org: kedro-org
+package_name: kedro_sphinx_theme
+project_name: kedro-sphinx-theme
+short_description: Sphinx theme for the Kedro ecosystem
