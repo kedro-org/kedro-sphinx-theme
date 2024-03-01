@@ -57,6 +57,9 @@ doc = [
     "kedro-sphinx-theme",
 ]
 
+[project.entry-points."sphinx.html_themes"]
+kedro-sphinx-theme = "kedro_sphinx_theme"
+
 [tool.sphinx-theme-builder]
 theme-name = "kedro-sphinx-theme"
 node-version = "18.19.1"

@@ -2,15 +2,15 @@
 
 from __future__ import annotations
 
-import os
-import typing as t
+from pathlib import Path
 
-if t.TYPE_CHECKING:
-    from sphinx.application import Sphinx
+from sphinx.application import Sphinx
 
 __version__ = "2024.3.0"
+
+THEME_PATH = (Path(__file__).parent / "theme" / "kedro-sphinx-theme").resolve()
 
 
 def setup(app: Sphinx):
     """Register theme."""
-    app.add_html_theme("kedro-sphinx-theme", os.path.abspath(os.path.dirname(__file__)))
+    app.add_html_theme("kedro-sphinx-theme", THEME_PATH)
