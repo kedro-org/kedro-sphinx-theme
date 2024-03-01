@@ -31,5 +31,5 @@ exclude_patterns = [
 
 # -- Options for HTML output
 
-html_theme = "furo"
+html_theme = "kedro-sphinx-theme"
 html_static_path = ["_static"]

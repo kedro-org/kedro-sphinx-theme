@@ -54,10 +54,7 @@ test = [
     "pytest-cov",
 ]
 doc = [
-    "furo",
-    "myst-parser",
-    "sphinx>=5",
-    "sphinx-copybutton",
+    "kedro-sphinx-theme",
 ]
 
 [tool.sphinx-theme-builder]
