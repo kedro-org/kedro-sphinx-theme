@@ -1,6 +1,6 @@
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["sphinx-theme-builder >= 0.2.0b2"]
+build-backend = "sphinx_theme_builder"
 
 [project]
 name = "kedro-sphinx-theme"
@@ -9,7 +9,8 @@ requires-python = ">=3.8"
 license = {file = "LICENSE.md"}
 description = "Sphinx theme for the Kedro ecosystem"
 dependencies = [
-    # "structlog",
+    "sphinx>=5",
+    "sphinx-rtd-theme",
 ]
 authors = [
     {name = "Juan Luis Cano Rodríguez", email = "juan_luis_cano@mckinsey.com"}
@@ -25,6 +26,8 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Framework :: Sphinx",
+    "Framework :: Sphinx :: Theme",
 ]
 dynamic = ["version"]
 
@@ -47,6 +50,10 @@ doc = [
     "sphinx-copybutton",
 ]
 
+[tool.sphinx-theme-builder]
+theme-name = "kedro-sphinx-theme"
+node-version = "18.19.1"
+
 [tool.ruff]
 show-fixes = true
 select = [
@@ -58,9 +65,6 @@ select = [
     "I",  # isort
     "PL",  # Pylint
 ]
-
-[tool.pdm.version]
-source = "scm"
 
 [tool.ruff.per-file-ignores]
 "tests/**/*" = ["D", "PLR2004"]

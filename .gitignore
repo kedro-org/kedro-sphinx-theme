@@ -154,3 +154,7 @@ dmypy.json
 cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
+.nodeenv
+node_modules
+src/kedro_sphinx_theme/theme/kedro-sphinx-theme/static/styles
+src/kedro_sphinx_theme/theme/kedro-sphinx-theme/static/scripts

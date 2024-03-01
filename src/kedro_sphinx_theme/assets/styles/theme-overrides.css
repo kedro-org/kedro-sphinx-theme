@@ -1,0 +1,294 @@
+/* override table width restrictions */
+@media screen and (min-width: 767px) {
+  .wy-table-responsive table td {
+    white-space: normal;
+  }
+
+  .wy-table-responsive {
+    overflow: visible;
+  }
+}
+
+/* override the table font-size and line-height */
+html.writer-html5 .rst-content .wy-table-responsive table.docutils th > p,
+html.writer-html5 .rst-content .wy-table-responsive table.docutils td > p {
+  font-size: 1em;
+  line-height: 1em;
+}
+
+img[alt^="mermaid-"] {
+  max-width: 600px;
+}
+
+.rst-content .important {
+  background: #ffedcc;
+}
+.rst-content .important .admonition-title {
+  background-color: #f0b37e;
+}
+
+/* Ensure the section title is visible when linked via a hash in the URL */
+:target:before {
+  content: "";
+  display: block;
+  height: 136px;
+}
+
+.wy-grid-header {
+  position: fixed;
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid #0000001f;
+}
+
+@media screen and (max-width: 767px) {
+  .wy-grid-header {
+    display: none;
+  }
+}
+
+.wy-header-logo {
+  width: 280px;
+}
+
+.wy-header-logo a {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 7rem;
+  color: black;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 7rem;
+}
+
+.wy-header-logo img {
+  width: 123px;
+  height: auto;
+  margin: 0 0.3rem 0 -0.6rem;
+  padding: 0;
+}
+
+.wy-header-version {
+  color: #555;
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 1.4rem;
+  margin-top: -0.4045em;
+  margin-bottom: 0.809em;
+  font-weight: 400;
+}
+
+.wy-main-nav {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.wy-main-nav a {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 4px;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wy-main-nav a:hover {
+  background: #f2f3f4;
+}
+
+.wy-main-nav a.active {
+  background: black;
+  color: #fff;
+}
+
+.wy-grid-header div[role="search"] {
+  width: 300px;
+  margin-left: 40px;
+}
+
+.wy-grid-header div[role="search"] input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  color: #666;
+  background-color: #fff;
+  font-family: "Inter", sans-serif !important;
+  font-size: 1.4289rem;
+  border: 1px #ccc solid;
+  border-radius: 1px;
+  transition: all ease 0.15s;
+  box-shadow: none;
+}
+
+.wy-body-for-nav .wy-menu-vertical {
+  height: calc(100% - 80px);
+}
+
+.wy-body-for-nav .wy-side-nav-search .wy-main-nav {
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.wy-body-for-nav .wy-side-nav-search .wy-main-nav a {
+  justify-content: center;
+  height: auto;
+  padding: 4px 12px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.wy-nav-top {
+  height: 65px;
+}
+
+.wy-nav-top a {
+  display: none;
+}
+
+.wy-nav-top:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: inline-block;
+  width: 126.5px;
+  height: 33px;
+  background: url("https://raw.githubusercontent.com/kedro-org/kedro-brand-identity/main/horizontal/color/kedro-horizontal-color-on-light.svg")
+    no-repeat center;
+  background-size: cover;
+}
+
+.wy-body-for-nav .wy-breadcrumbs {
+  height: 5rem;
+}
+
+.wy-body-for-nav .wy-breadcrumbs li {
+  font-size: 1.5rem;
+}
+
+.wy-body-for-nav .wy-menu-vertical {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .wy-body-for-nav .wy-nav-side {
+    top: 80px;
+    box-shadow: none;
+    border-right: 1px solid #0000001f;
+  }
+
+  .wy-body-for-nav .wy-nav-side .wy-side-nav-search {
+    display: none;
+  }
+
+  .wy-body-for-nav .wy-nav-content-wrap {
+    margin-top: 75px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wy-body-for-nav .wy-side-scroll {
+    display: block;
+    overflow: auto;
+  }
+
+  .wy-body-for-nav .wy-menu-vertical {
+    height: auto;
+    padding-bottom: 100px;
+  }
+
+  .wy-body-for-nav .wy-side-nav-search {
+    padding-top: 20px;
+  }
+
+  .wy-body-for-nav .wy-side-nav-search > div.version,
+  .wy-side-nav-search .icon.icon-home {
+    display: none;
+  }
+
+  .wy-body-for-nav .wy-side-nav-search .wy-main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wy-body-for-nav .wy-side-nav-search .wy-main-nav a {
+    background: #f2f3f4;
+  }
+  .wy-body-for-nav .wy-side-nav-search .wy-main-nav a.active {
+    background: black;
+  }
+
+  .wy-body-for-nav .wy-nav-side {
+    top: 65px;
+  }
+
+  .wy-body-for-nav .wy-nav-side.shift {
+    width: 100%;
+  }
+
+  .wy-body-for-nav .wy-menu-vertical {
+    width: 100%;
+  }
+
+  .wy-body-for-nav .wy-nav-content-wrap.shift {
+    transform: none;
+  }
+
+  .wy-body-for-nav .wy-nav-top {
+    border-bottom: 1px solid #0000001f;
+    box-shadow: none;
+  }
+
+  .wy-body-for-nav .wy-nav-top i {
+    display: none;
+  }
+
+  .wy-nav-top-close,
+  .wy-nav-top-open {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: url("https://kedro-shared-files.s3.eu-west-2.amazonaws.com/close-icon.svg")
+      no-repeat center;
+  }
+
+  .wy-nav-top-open {
+    background: url("https://kedro-shared-files.s3.eu-west-2.amazonaws.com/menu-icon.svg")
+      no-repeat center;
+  }
+
+  .wy-body-for-nav .wy-nav-content-wrap.shift .wy-nav-top-close {
+    display: block;
+  }
+
+  .wy-body-for-nav .wy-nav-content-wrap.shift .wy-nav-top-open {
+    display: none;
+  }
+
+  .wy-body-for-nav .wy-nav-top .wy-nav-top-close {
+    display: none;
+  }
+
+  .wy-body-for-nav .wy-breadcrumbs {
+    display: flex;
+    position: relative;
+  }
+}

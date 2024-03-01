@@ -1,0 +1,10 @@
+{
+    "name": "kedro-sphinx-theme",
+    "repository": "https://github.com/kedro-org/kedro-sphinx-theme",
+    "scripts": {
+        "build": "concat -o src/kedro_sphinx_theme/theme/kedro-sphinx-theme/static/styles/kedro-sphinx-theme.css src/kedro_sphinx_theme/assets/styles/qb1-sphinx-rtd.css src/kedro_sphinx_theme/assets/styles/theme-overrides.css"
+    },
+    "devDependencies": {
+        "concat": "^1.0.3"
+    }
+}
