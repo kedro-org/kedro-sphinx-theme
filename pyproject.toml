@@ -9,8 +9,18 @@ requires-python = ">=3.8"
 license = {file = "LICENSE.md"}
 description = "Sphinx theme for the Kedro ecosystem"
 dependencies = [
-    "sphinx>=5",
-    "sphinx-rtd-theme",
+    "docutils<0.21",
+    "sphinx>=5.3,<7.3",
+    "sphinx_rtd_theme==2.0.0",
+    # Regression on sphinx-autodoc-typehints 1.21
+    # that creates some problematic docstrings
+    "sphinx-autodoc-typehints==1.20.2",
+    "sphinx_copybutton==0.5.2",
+    "sphinx-notfound-page",
+    "myst-parser>=1.0,<2.1",
+    "sphinx-last-updated-by-git",
+    "sphinx-favicon",
+    "sphinxcontrib-youtube",
 ]
 authors = [
     {name = "Juan Luis Cano Rodríguez", email = "juan_luis_cano@mckinsey.com"}
