@@ -21,6 +21,10 @@ extensions = [
     "sphinx_copybutton",
 ]
 
+favicons = [
+    "https://kedro.org/images/favicon.ico",
+]
+
 html_js_files = [
     "js/custom.js",
 ]
