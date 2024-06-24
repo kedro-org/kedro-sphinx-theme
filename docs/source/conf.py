@@ -21,6 +21,10 @@ extensions = [
     "sphinx_copybutton",
 ]
 
+html_js_files = [
+    "js/custom.js",
+]
+
 templates_path = ["_templates"]
 
 exclude_patterns = [
