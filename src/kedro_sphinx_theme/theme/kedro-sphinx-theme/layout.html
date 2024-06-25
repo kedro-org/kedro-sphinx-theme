@@ -87,6 +87,13 @@
 
         // Add 'active' class to the clicked link
         event.target.classList.add('active');
+
+
+        // Get the href attribute of the clicked link
+        var href = event.target.getAttribute('href');
+        console.log(href); // This will log the href to the console
+
+        window.location.href = href;
       });
     });
   });
