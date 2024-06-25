@@ -100,9 +100,9 @@
       // Add active class based on current URL
       var currentPath = window.location.pathname;
       console.log(currentPath, 'currentPath')
-      
+
       navLinks.forEach(function(link) {
-        if (link.getAttribute('href') === currentPath) {
+        if (window.location.pathname.includes("kedro-viz")) {
           console.log("link.getAttribute('href')", link.getAttribute('href'));
           // Remove 'active' class from all links first to ensure only one active link
           removeActiveClass();
