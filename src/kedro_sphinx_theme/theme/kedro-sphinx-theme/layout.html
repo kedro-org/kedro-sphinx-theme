@@ -68,6 +68,10 @@
 
     // Select all navigation links within the .wy-main-nav container
     var navLinks = document.querySelectorAll('.wy-main-nav .wy-main-nav-link');
+    
+    // Define paths to check against the current URL
+    var paths = ['kedro-viz', 'kedro-datasets'];
+    var currentPath = window.location.pathname;
 
     // Function to remove 'active' class from all links
     function removeActiveClass() {
@@ -76,41 +80,23 @@
       });
     }
 
-    // Add click event listener to each link
-    navLinks.forEach(function(link) {
-      // link.addEventListener('click', function(event) {
-      //   // Prevent the default link action
-      //   event.preventDefault();
 
-      //   // Remove 'active' class from all links
-      //   removeActiveClass();
-
-      //   // Add 'active' class to the clicked link
-      //   event.target.classList.add('active');
-
-
-      //   // Get the href attribute of the clicked link
-      //   var href = event.target.getAttribute('href');
-      //   console.log(href); // This will log the href to the console
-
-      //   window.location.href = href;
-      // });
-
-
-      // Add active class based on current URL
-      var currentPath = window.location.pathname;
-      console.log(currentPath, 'currentPath')
-
-      navLinks.forEach(function(link) {
-        if (window.location.pathname.includes("kedro-viz")) {
-          console.log("link.getAttribute('href')", link.getAttribute('href'));
-          // Remove 'active' class from all links first to ensure only one active link
-          removeActiveClass();
-          // Add 'active' class to the link that matches current URL
-          link.classList.add('active');
-        }
-      });
+    // Check each path for a match with the current URL
+    paths.forEach(function(path) {
+      if (currentPath.includes(path)) {
+        navLinks.forEach(function(link) {
+          if (link.getAttribute('href').includes(path)) {
+            removeActiveClass(); // Ensure only one link is active
+            link.classList.add('active'); // Add 'active' class to the matching link
+          }
+        });
+      }
     });
   });
 </script>
 {% endblock %}
+
+
+https://docs.kedro.org/en/stable/
+https://docs.kedro.org/projects/kedro-viz/en/stable/
+https://docs.kedro.org/projects/kedro-datasets/en/stable/
