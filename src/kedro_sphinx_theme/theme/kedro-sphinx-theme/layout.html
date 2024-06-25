@@ -72,13 +72,20 @@
     // Select all navigation links within the .wy-main-nav container
     var navLinks = document.querySelectorAll('.wy-main-nav .wy-main-nav-link');
 
-    // Iterate over each link
     navLinks.forEach(function(link) {
-      // Check if the link's href matches the current URL
-      if (link.href === currentUrl) {
-        // Add the 'active' class to the matching link
-        link.classList.add('active');
-      }
+      link.addEventListener('click', function(event) {
+        // Prevent the default link action
+        event.preventDefault();
+
+        // Remove 'active' class from all links
+        removeActiveClass();
+
+        // Add 'active' class to the clicked link
+        event.target.classList.add('active');
+
+        // Manually navigate to the link's href
+        window.location.href = event.target.getAttribute('href');
+      });
     });
   });
 </script>
