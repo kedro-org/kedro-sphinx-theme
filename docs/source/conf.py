@@ -25,13 +25,6 @@ favicons = [
     "https://kedro.org/images/favicon.ico",
 ]
 
-# Add the relative path from your conf.py file to the assets directory to html_static_path
-html_static_path = ['_static']
-
-# Include custom.js in the HTML output
-html_js_files = [
-    'custom.js',
-]
 
 templates_path = ["_templates"]
 
