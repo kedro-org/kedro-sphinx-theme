@@ -66,12 +66,17 @@
       openBtn.classList.add('wy-nav-top-open');
       document.querySelector('.wy-nav-top').prepend(openBtn);
 
-    // Get the current URL
-    const currentUrl = window.location.href;
-
     // Select all navigation links within the .wy-main-nav container
     var navLinks = document.querySelectorAll('.wy-main-nav .wy-main-nav-link');
 
+    // Function to remove 'active' class from all links
+    function removeActiveClass() {
+      navLinks.forEach(function(link) {
+          link.classList.remove('active');
+      });
+    }
+
+    // Add click event listener to each link
     navLinks.forEach(function(link) {
       link.addEventListener('click', function(event) {
         // Prevent the default link action
