@@ -19,6 +19,11 @@ release = ".".join(version.split(".")[:2])
 extensions = [
     "myst_parser",
     "sphinx_copybutton",
+    'sphinx_favicon',
+]
+
+favicons = [
+    "https://kedro.org/images/favicon.ico",
 ]
 
 templates_path = ["_templates"]
