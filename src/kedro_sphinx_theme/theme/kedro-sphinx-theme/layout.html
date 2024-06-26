@@ -16,9 +16,9 @@
   </div>
 
   <div class="wy-main-nav">
-    <a class="wy-main-nav-link" href="/" class="active">Kedro</a>
-    <a class="wy-main-nav-link" href="https://docs.kedro.org/projects/kedro-viz/en/stable/">Kedro-Viz</a>
-    <a class="wy-main-nav-link" href="https://docs.kedro.org/projects/kedro-datasets">Kedro-Datasets</a>
+    <a id='kedro' class="wy-main-nav-link" href="">Kedro</a>
+    <a id='kedro-viz' class="wy-main-nav-link" href="/">Kedro-Viz</a>
+    <a id='kedro-datasets' class="wy-main-nav-link" href="">Kedro-Datasets</a>
   </div>
 
   {%- include "searchbox.html" %}
@@ -64,10 +64,24 @@
     document.querySelector('.wy-nav-top').prepend(closeBtn);
 
     // Prepend open button to mobile header
-      var openBtn = document.createElement("span");
-      openBtn.dataset.toggle = 'wy-nav-top';
-      openBtn.classList.add('wy-nav-top-open');
-      document.querySelector('.wy-nav-top').prepend(openBtn);
-  });
+    var openBtn = document.createElement("span");
+    openBtn.dataset.toggle = 'wy-nav-top';
+    openBtn.classList.add('wy-nav-top-open');
+    document.querySelector('.wy-nav-top').prepend(openBtn);
+
+    // Select all navigation links within the .wy-main-nav container
+    var navLinks = document.querySelectorAll('.wy-main-nav .wy-main-nav-link');
+    var currentPath = window.location.pathname;
+
+    // Iterate over each link to check if the current path includes the link's unique ID
+    navLinks.forEach(function(link) {
+      var kedroSpecificPath = 'https://docs.kedro.org/en';
+      var isKedroLink = link.id === 'kedro';
+
+      if ((isKedroLink && currentPath.includes(kedroSpecificPath)) || (!isKedroLink && currentPath.includes(link.id))) {
+        link.classList.add('active');
+      }
+    });
+});
 </script>
 {% endblock %}
