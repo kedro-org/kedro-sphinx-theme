@@ -54,9 +54,8 @@ test = [
     "pytest",
     "pytest-cov",
 ]
-docs = [
+doc = [
     "kedro-sphinx-theme",
-    "sphinx-favicon",
 ]
 
 [project.entry-points."sphinx.html_themes"]
