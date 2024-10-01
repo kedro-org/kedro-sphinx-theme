@@ -7,14 +7,15 @@ import shutil  # Import shutil for high-level file operations
 
 # Define a fixture for setup and cleanup
 @pytest.fixture
-def build_and_cleanup():
+def cleanup():
     # Setup can be done here if needed
     yield  # This yields control to the test function
     # Cleanup: Remove the wheel_contents directory after the test
     shutil.rmtree('wheel_contents', ignore_errors=True)
+    shutil.rmtree('dist', ignore_errors=True)
 
 # Use the fixture in your test by including it as a parameter
-def test_built_wheel_contains_expected_files(build_and_cleanup):
+def test_built_wheel_contains_expected_files(cleanup):
     # Build the project
     subprocess.run(['uv', 'build'], check=True)
     
