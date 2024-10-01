@@ -29,13 +29,13 @@ jobs:
 
       - name: Check /assets/ folder
         run: |
-          if [ ! "$(ls -A wheel_contents/assets/*.css)" ]; then echo "CSS files missing in /assets/"; exit 1; fi
-          if [ ! "$(ls -A wheel_contents/assets/*.js)" ]; then echo "JS files missing in /assets/"; exit 1; fi
+          if [ ! "$(ls -A wheel_contents/kedro_sphinx_theme/assets/*.css)" ]; then echo "CSS files missing in /assets/"; exit 1; fi
+          if [ ! "$(ls -A wheel_contents/kedro_sphinx_theme/assets/*.js)" ]; then echo "JS files missing in /assets/"; exit 1; fi
 
       - name: Check /theme/kedro-sphinx-theme/ folder
         run: |
-          if [ ! "$(ls -A wheel_contents/theme/kedro-sphinx-theme/*.html)" ]; then echo "HTML files missing in /theme/kedro-sphinx-theme/"; exit 1; fi
+          if [ ! "$(ls -A wheel_contents/kedro_sphinx_theme/theme/kedro-sphinx-theme/*.html)" ]; then echo "HTML files missing in /theme/kedro-sphinx-theme/"; exit 1; fi
 
       - name: Check theme.conf file
         run: |
-          if [ ! -f "wheel_contents/theme/kedro-sphinx-theme/theme.conf" ]; then echo "theme.conf file missing in /theme/kedro-sphinx-theme/"; exit 1; fi
+          if [ ! -f "wheel_contents/kedro_sphinx_theme/theme/kedro-sphinx-theme/theme.conf" ]; then echo "theme.conf file missing in /theme/kedro-sphinx-theme/"; exit 1; fi
