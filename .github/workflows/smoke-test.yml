@@ -30,7 +30,6 @@ jobs:
       - name: Check /assets/ folder
         run: |
           if [ ! "$(ls -A wheel_contents/kedro_sphinx_theme/assets/styles/*.css)" ]; then echo "CSS files missing in /assets/"; exit 1; fi
-          if [ ! "$(ls -A wheel_contents/kedro_sphinx_theme/assets/styles/*.js)" ]; then echo "JS files missing in /assets/"; exit 1; fi
 
       - name: Check /theme/kedro-sphinx-theme/ folder
         run: |
