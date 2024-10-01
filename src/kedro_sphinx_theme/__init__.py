@@ -37,7 +37,7 @@ def _add_jinja_filters(app: Sphinx) -> None:
 
 def _override_permalinks_icon(app: Sphinx) -> None:
     # https://github.com/readthedocs/sphinx_rtd_theme/issues/98#issuecomment-1503211439
-    app.config.html_permalinks_icon = "¶"
+    app.config.html_permalinks_icon = "¶"  # type: ignore
 
 
 def setup(app: Sphinx) -> None:
