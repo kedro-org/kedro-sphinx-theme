@@ -11,7 +11,7 @@ Sphinx theme for the Kedro ecosystem
 To install, run
 
 ```
-(.venv) $ pip install kedro-sphinx-theme
+$ uv pip install kedro-sphinx-theme
 ```
 
 ## Development
@@ -19,8 +19,8 @@ To install, run
 To run style checks:
 
 ```
-(.venv) $ pip install pre-commit
-(.venv) $ pre-commit run -a
+$ uv tool install pre-commit
+$ pre-commit run -a
 ```
 
 ## Overview
