@@ -1,0 +1,41 @@
+name: Run smoke tests
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+
+      - name: Build project
+        run: |
+          python -m pip install uv
+          uv build
+
+      - name: Install unzipact -j smoke-test
+        run: sudo apt-get install unzip
+
+      - name: Unzip the wheel file
+        run: |
+          unzip dist/*.whl -d wheel_contents
+
+      - name: Check /assets/ folder
+        run: |
+          if [ ! "$(ls -A wheel_contents/assets/*.css)" ]; then echo "CSS files missing in /assets/"; exit 1; fi
+          if [ ! "$(ls -A wheel_contents/assets/*.js)" ]; then echo "JS files missing in /assets/"; exit 1; fi
+
+      - name: Check /theme/kedro-sphinx-theme/ folder
+        run: |
+          if [ ! "$(ls -A wheel_contents/theme/kedro-sphinx-theme/*.html)" ]; then echo "HTML files missing in /theme/kedro-sphinx-theme/"; exit 1; fi
+
+      - name: Check theme.conf file
+        run: |
+          if [ ! -f "wheel_contents/theme/kedro-sphinx-theme/theme.conf" ]; then echo "theme.conf file missing in /theme/kedro-sphinx-theme/"; exit 1; fi
