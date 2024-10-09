@@ -13,7 +13,7 @@
   </div>
 
   <div class="wy-main-nav">
-    <a id='kedro' class="wy-main-nav-link" href="/">Kedro</a>
+    <a id='kedro' class="wy-main-nav-link" href="https://docs.kedro.org/en/stable">Kedro</a>
     <a id='kedro-viz' class="wy-main-nav-link" href="https://docs.kedro.org/projects/kedro-viz/en/stable/">Kedro-Viz</a>
     <a id='kedro-datasets' class="wy-main-nav-link" href="https://docs.kedro.org/projects/kedro-datasets">Kedro-Datasets</a>
   </div>
@@ -31,6 +31,20 @@
 
   //inline styling for read-the-docs flyout
   document.documentElement.style.setProperty('--readthedocs-flyout-font-size', '0.9em');
+
+    function highlightActiveLink() {
+      var currentUrl = window.location.href;
+      const links = document.querySelectorAll(".wy-main-nav .wy-main-nav-link");
+
+      // Iterate over each link and check if its href is part of the current URL
+      links.forEach(link => {
+        if (currentUrl.includes(link.href)) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");  // Remove the active class if it's not active
+        }
+      });
+    }
 
   document.addEventListener("DOMContentLoaded", function() {
 
@@ -66,20 +80,12 @@
     openBtn.classList.add('wy-nav-top-open');
     document.querySelector('.wy-nav-top').prepend(openBtn);
 
-    // Select all navigation links within the .wy-main-nav container
-    var navLinks = document.querySelectorAll('.wy-main-nav .wy-main-nav-link');
-    var currentPath = window.location.pathname;
+    highlightActiveLink(); 
 
-    // Iterate over each link to check if the current path includes the link's unique ID
-    navLinks.forEach(function(link) {
-      if (currentPath.includes("/projects/kedro-viz/en/") && link.id === 'kedro-viz') {
-        link.classList.add('active');
-      } else if (currentPath.includes("/projects/kedro-datasets/en/") && link.id === 'kedro-datasets') {
-        link.classList.add('active');
-      } else if (link.id === 'kedro') {
-        // Default to Kedro if no other match
-        link.classList.add('active');
-      }
+    // Optionally, listen for URL changes (e.g., when using history.pushState)
+    window.addEventListener('popstate', function(event) {
+      highlightActiveLink();
     });
+  });
 </script>
 {% endblock %}
