@@ -72,13 +72,14 @@
 
     // Iterate over each link to check if the current path includes the link's unique ID
     navLinks.forEach(function(link) {
-      var kedroSpecificPath = 'https://docs.kedro.org/en';
-      var isKedroLink = link.id === 'kedro';
-
-      if ((isKedroLink && currentPath.includes(kedroSpecificPath)) || (!isKedroLink && currentPath.includes(link.id))) {
+      if (currentPath.includes("/projects/kedro-viz/en/") && link.id === 'kedro-viz') {
+        link.classList.add('active');
+      } else if (currentPath.includes("/projects/kedro-datasets/en/") && link.id === 'kedro-datasets') {
+        link.classList.add('active');
+      } else if (link.id === 'kedro') {
+        // Default to Kedro if no other match
         link.classList.add('active');
       }
     });
-});
 </script>
 {% endblock %}
