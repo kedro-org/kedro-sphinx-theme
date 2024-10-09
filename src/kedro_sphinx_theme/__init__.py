@@ -7,7 +7,7 @@ from pathlib import Path
 
 from sphinx.application import Sphinx
 
-__version__ = "2024.10.0"
+__version__ = "2024.10.2"
 
 THEME_PATH = (Path(__file__).parent / "theme" / "kedro-sphinx-theme").resolve()
 
